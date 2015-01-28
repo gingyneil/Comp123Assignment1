@@ -54,14 +54,15 @@ namespace Assignment1
 
 
         }
+        // Hit Damage Method is to multiply the strength amount by a random number between 1 and 6.
         private int hitDamage()
         {
             int number;
             Random rnd = new Random();
             number = rnd.Next(6)+1;
-           // Console.WriteLine(number);
+           
             int damageOnhit = this.strength * number;
-           // Console.WriteLine(damageOnhit);
+          
             return damageOnhit;
 
         }
@@ -78,7 +79,7 @@ namespace Assignment1
             if (hitAttempt() == true)
             {
                 int damageAmount = hitDamage();
-                Console.WriteLine("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
+                Console.WriteLine("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
                 Console.WriteLine("The damage attempt was sucessful, The damage dealt is {0}", damageAmount);
             }
             else 
