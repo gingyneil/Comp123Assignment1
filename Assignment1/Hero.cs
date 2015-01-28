@@ -20,15 +20,11 @@ namespace Assignment1
         public Hero(string name)
         {
             generateAbilites();
-          //  Console.WriteLine("This is the strength {0}, speed {1} and health {2} for the {3} Hero ", strength, speed, health, name);
             this.name = name;
            
         }
-        public void show() 
-        {
-            Console.WriteLine("The strength is {0}, The health is {1} and the speed is {2} ", this.strength,this.health,this.speed);
         
-        }
+       
         // PRIVATE METHODS++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
         private void generateAbilites()
         {
@@ -39,14 +35,13 @@ namespace Assignment1
         }
         private bool hitAttempt()
         {
-           //THIS IS WEIRD BUT IT WORKS, WITH ONE RND METHOD I ALWAYS ENDED UP WITH THE SAME NUMBER (1) BY DECLARING A SECOND HITATTEMPT VARIABLE AND ASSIGNING IT
-           //TO HITATTEMPT2 MY RND NUMBER WAS SUCESSFULLY ALWAYS DIFFERENT (I DONT FULLY UNDERSTAND IT BUT SOMEHOW IT CHANGED THE SEED OR SOMETHING OR OTHER
+           //Hit attempt method is to generate a hit 20% of the time.
             Random rnd = new Random();
             int attemptHit = rnd.Next(1, 11);
-            int attemptHit2 = attemptHit;
-            attemptHit2 = rnd.Next(1, 11);
+            
+            
            
-            if (attemptHit2 <= 2)
+            if (attemptHit %5 == 0)
             {
                 return true;
             }
@@ -71,12 +66,19 @@ namespace Assignment1
 
         }
         // PUBLIC METHODS +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+        public void show()
+        {
+            Console.WriteLine("The strength is {0}, The health is {1} and the speed is {2} ", this.strength, this.health, this.speed);
+
+        }
         public void fight()
         {
             
             if (hitAttempt() == true)
             {
                 int damageAmount = hitDamage();
+                Console.WriteLine("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
                 Console.WriteLine("The damage attempt was sucessful, The damage dealt is {0}", damageAmount);
             }
             else 
