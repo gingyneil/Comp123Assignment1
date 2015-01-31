@@ -79,10 +79,20 @@ namespace Assignment1
             if (hitAttempt() == true)
             {
                 int damageAmount = hitDamage();
-                Console.WriteLine("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
-                Console.WriteLine("The damage attempt was sucessful, The damage dealt is {0}", damageAmount);
-            }
-            else 
+
+                if (damageAmount > 300)
+                {
+                    Console.WriteLine("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$");
+                    Console.WriteLine("CRITICAL BLOW, THE DAMAGE DEALT IS {0}", damageAmount);
+                    Console.WriteLine("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$");
+                }
+               else 
+                {
+
+                    Console.WriteLine("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
+                    Console.WriteLine("The damage attempt was sucessful, The damage dealt is {0}", damageAmount);
+                }
+                } else
             {
                 Console.WriteLine("No damage dealt");
             }
