@@ -75,24 +75,25 @@ namespace Assignment1
         }
         public void fight()
         {
-            
+
             if (hitAttempt() == true)
             {
                 int damageAmount = hitDamage();
 
-                if (damageAmount > 300)
+                if (damageAmount >= 300)
                 {
                     Console.WriteLine("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$");
                     Console.WriteLine("CRITICAL BLOW, THE DAMAGE DEALT IS {0}", damageAmount);
                     Console.WriteLine("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$");
                 }
-               else 
+                else if(damageAmount < 300)
                 {
 
                     Console.WriteLine("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
                     Console.WriteLine("The damage attempt was sucessful, The damage dealt is {0}", damageAmount);
                 }
-                } else
+            }
+            else
             {
                 Console.WriteLine("No damage dealt");
             }
