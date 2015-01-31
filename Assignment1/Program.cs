@@ -14,9 +14,9 @@ namespace Assignment1
     {
         static void Main(string[] args)
         {
-            Hero instance = new Hero("Arlina");
-            instance.show();
-            instance.fight();
+            Hero Arlina = new Hero("Arlina");
+            Arlina.show();
+            Arlina.fight();
             
         }
     }
